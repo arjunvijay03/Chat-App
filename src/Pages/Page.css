@@ -1,0 +1,22 @@
+.home{
+    height: 100vh;
+    background-color: #a7bcff ;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.homecontainer{
+    display: flex;
+    width: 65vw;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 80vh;
+}
+@media (max-width:820px) {
+    .homecontainer{
+        width: 100vw;
+        height: 100vh;
+        overflow: visible;
+    }
+}

@@ -1,0 +1,106 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    background-color: #2f2d52;
+    height: 50px;
+    padding: 10px;
+    justify-content: space-between;
+    color: #fff;
+}
+.logo{
+    font-weight: bold;
+}
+.user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user img{
+    background-color: #fff;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+.user button{
+    background-color: #5d5b8d ;
+    border: none;
+    font-size: .7rem;
+    color: #fff;
+    padding: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+
+.search{
+    border-bottom: 1px solid gray;
+}
+.searchForm{
+padding: 10px;
+}
+.searchForm input{
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+}
+.searchForm input::placeholder{
+    color:lightgray ;
+}
+.userChat{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    cursor: pointer;
+    transition: .3s;
+    border-bottom: 1px solid rgb(83, 82, 82);
+}
+.userChat:hover{
+    background-color: #2f2d52;
+}
+.userChat img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.userChatInfo span{
+    font-size: 19px;
+}
+.userChatInfo p{
+    font-size: 13px;
+    color: lightgray;
+}
+
+@media  (max-width:400px) {
+    .user span{
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+    .userChat{
+        flex-direction: column;
+        gap: 0;
+        align-items: flex-start;
+    }
+    .navbar{
+        height: auto;
+        justify-content: center;
+        padding: 0;
+        padding-block: 5px;
+    }
+    .user{
+        flex-direction: column;
+        gap: 2px;
+    }
+    .user img{
+        width: 30px;
+        height: 30px;
+    }
+   
+}
