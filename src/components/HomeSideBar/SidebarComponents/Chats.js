@@ -31,7 +31,7 @@ function Chats() {
   };
   return (
     <div className="chats">
-      {Object.entries(chats)
+      {chats && Object.entries(chats)
         ?.sort((a, b) => b[1].date - a[1].date)
         .map((chat) => {
           return (

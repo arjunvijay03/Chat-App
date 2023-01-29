@@ -9,17 +9,7 @@ function App() {
 
   
 const {currentUser} = useContext(authContext)
-  // console.log(currentUser);
-  // if(currentUser){
-
-  //   const ProtectedRoute = ({children})=>{
-  //     console.log(currentUser);
-  //     if(!currentUser){
-  //       return <Navigate to='/login' />
-  //     }
-  //     return children
-  //   }
-  // }
+ 
   
 
 
@@ -30,9 +20,6 @@ const {currentUser} = useContext(authContext)
         <Routes>
           <Route exact path='/' element={
             currentUser ? <Home /> : <LoginPage />
-          // <ProtectedRoute>
-          //   <Home />
-          // </ProtectedRoute>
         }/>
           <Route  path='/login' element={<LoginPage />}/>
           <Route  path='/signup' element={<SignupPage />}/>

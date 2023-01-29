@@ -9,7 +9,7 @@ function Login() {
     const email = event.target[0].value;
     const password = event.target[1].value;
     firebase.auth().signInWithEmailAndPassword(email, password);
-    console.log("hii");
+  
     navigate("/");
   };
 

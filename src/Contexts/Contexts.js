@@ -8,7 +8,7 @@ export const AuthContextProvider =   ({children})=>{
     useEffect(()=>{
       const unSub =  firebase.auth().onAuthStateChanged((user) => {
             setCurrentUser(user);
-            // console.log(user);
+           
         })
         return()=>{
             unSub();

@@ -22,31 +22,19 @@ function Search() {
       .get()
       .then((res) => {
         let documents = res.docs.map(doc => doc.data());
-        // res.forEach((element) => {
-        //   console.log(element.data());
-        //   setUser( element.data());
-        // });
+       
         setUser(documents)
-        // console.log(user);
-        // console.log("hiiiiiie");
+      
       })
       .catch((err) => {
-        console.log(err);
+        
         setError(true);
       });
   };
-  // const handleKey = event=>{
-  //   // event.preventDefault();
-  //   console.log(event.keyCode);
-  //   // event.keyCode === 13 &&( event.preventDefault() handleSearch())
-  //   if(event.keyCode === 13){
-  //     event.preventDefault()
-  //      handleSearch()
-  //   }
-  // }
+
 
   const handleSelection = (data) => {
-    console.log(data);
+  
     const combainedId =
       currentUser.uid > data.uid
         ? currentUser.uid + data.uid
@@ -120,7 +108,7 @@ function Search() {
         user?.map((data, index) =>{
           
       return ( <div className="userChat" key={index} onClick={()=>{
-        console.log('okkk');
+       
         handleSelection(data)}}>
           <img src={data.profilePic} alt="" />
           <div className="userChatInfo">

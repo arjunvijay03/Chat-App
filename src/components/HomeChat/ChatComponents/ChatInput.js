@@ -3,7 +3,7 @@ import Img from "../../../image/img.png";
 import Attach from "../../../image/attach.png";
 import { chatContext } from "../../../Contexts/ChatContext";
 import { authContext } from "../../../Contexts/Contexts";
-// import { firebaseContext } from "../../../Contexts/Contexts";
+
 import {serverTimestamp } from 'firebase/firestore'
 import firebase from 'firebase/compat/app';
 import { v4 as uuid } from "uuid";
@@ -12,9 +12,9 @@ function ChatInput() {
   const [image, setImage] = useState(null);
   const { currentUser } = useContext(authContext);
   const { data } = useContext(chatContext);
-  // const { firebase } = useContext(firebaseContext);
-// console.log(data.chatId);
+  
   const handleSend = () => {
+    
     if (image) {
       firebase
         .storage()
@@ -22,7 +22,7 @@ function ChatInput() {
         .put(image)
         .then((res) => {
           res.ref.getDownloadURL().then((url) => {
-            console.log(url);
+           
 
             firebase
               .firestore()
@@ -39,7 +39,7 @@ function ChatInput() {
               });
           });
         });
-    } else {
+    } else if(text) {
       firebase
         .firestore()
         .collection("chats")
@@ -53,6 +53,7 @@ function ChatInput() {
           })
         });
     }
+   if (text){
     firebase.firestore().collection('userChat').doc(currentUser.uid).update({
       [data.chatId+".lastMessage"] :{
         text
@@ -64,8 +65,7 @@ function ChatInput() {
         text
       },
       [data.chatId+'.date'] : serverTimestamp()
-    })
-
+    })}
     setText("");
     setImage(null)
   };
@@ -88,7 +88,7 @@ function ChatInput() {
         <label htmlFor="imgFile">
           <img className="imageInput" src={Img} alt="" />
         </label>
-        <button onClick={handleSend}>Send</button>
+        <button onClick={()=>data.chatId=='null'? null: handleSend()}>Send</button>
       </div>
     </div>
   );

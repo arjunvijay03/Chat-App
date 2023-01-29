@@ -49,7 +49,7 @@ function Signup() {
             });
           });
         navigate("/");
-        console.log(result.user);
+       
       })
       .catch((error) => {
         alert(error);
